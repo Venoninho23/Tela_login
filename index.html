@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Agendamento</title>
 </head>
 <body>
-    <div class="main-login">
-        <div class="left-login">
-            <h1>Faça Login<br>E entre para nosso time</h1>
-            <img src="calendario.svg" class="left-login-image" alt="calendario">
-        </div>
-        <div class="right-login">
-            <div class="card-login">
-                <h1>LOGIN</h1>
-                <div class="textfield">
-                    <label for="Usuário">Usuário</label>
-                    <input type="text" name="Usuário" placeholder="Usuário">
-                </div>
-                <div class="textfield">
-                    <label for="Senha">Senha</label>
-                    <input type="password" name="senha" placeholder="Senha">
-                </div>
-                <button class="btn-login">Login</button>  
-
-            </div>    
-        </div>
-
-
+<div class="main-agendamento">
+<div class="left-agendamento">
+<h1>WhatsAgenda</h1>
+<img src="calendario.svg" class="left-agendamento-image" alt="calendario">
 </div>
+<div class="right-agendamento">
+<div class="card-agendamento">
+<h1>AGENDAMENTO</h1>
+<div class="textfield">
+<label for="data">Data:</label>
+<input type="date" name="data">
+</div>
+<div class="textfield">
+<label for="horario">Horário:</label>
+<select name="horario">
+<option value="09:00">09:00</option>
+<option value="10:00">10:00</option>
+<option value="11:00">11:00</option>
+<!-- Adicione mais opções de horário conforme necessário -->
+</select>
+</div>
+<div class="textfield">
+<label for="profissional">Profissional:</label>
+<select name="profissional">
+<option value="João">João</option>
+<option value="Maria">Maria</option>
+<option value="Pedro">Pedro</option>
+<!-- Adicione mais opções de profissionais conforme necessário -->
+</select>
+</div>
+<button class="btn-agendar" onclick="agendar()">Agendar</button>
+</div>    
+</div>
+</div>
+ 
+    <script>
+        function agendar() {
+            var data = document.querySelector('input[name="data"]').value;
+            var horario = document.querySelector('select[name="horario"]').value;
+            var profissional = document.querySelector('select[name="profissional"]').value;
+            window.location.href = "detalhes.html?data=" + data + "&horario=" + horario + "&profissional=" + profissional;
+        }
+</script>
 </body>
 </html>
